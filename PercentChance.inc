@@ -55,7 +55,6 @@ public OnPlayerConnect(playerid)
 {
     for(new i = 0; i < MAX_PERCENT_VARS; i++)
 	    _t_perc_pdata[playerid][i] = 0;
-    SendClientMessage(playerid, -1, "asdasdasd");
 	#if defined _t_perc__OnPlayerConnect
 		return _t_perc__OnPlayerConnect(playerid);
 	#else
