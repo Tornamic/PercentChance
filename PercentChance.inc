@@ -31,9 +31,8 @@ new _t_perc_cdata[MAX_PERCENT_VARS];
 stock ProcessChance(playerid, varid)
 {
     if(!_t_perc_cdata[varid]) return 0;
-    if(!_t_perc_pdata[playerid][varid] && random(100) < _t_perc_cdata[varid]) return 1;
     new result = ((_t_perc_pdata[playerid][varid] += _t_perc_cdata[varid]) >= 100);
-    if(result) _t_perc_pdata[playerid][varid] = 0;
+    if(result) _t_perc_pdata[playerid][varid] -= 100;
     return result;
 }
 stock SetVarChance(varid, chance)
